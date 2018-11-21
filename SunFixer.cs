@@ -48,9 +48,17 @@ namespace SunFixer {
 
 		void onGameSceneLoadRequested (GameScenes scene)
 		{
-			Sun sun = Sun.Instance;
-			if (sun != null) {
-				sun.sunRotationPrecisionDefault = 12;
+			Sun[] suns = Resources.FindObjectsOfTypeAll<Sun>();
+			if (suns == null)
+			{
+				return;
+			}
+			for (Int32 i = 0; i < suns.Length; i++)
+			{
+				if (suns[i] != null)
+				{
+					suns[i].sunRotationPrecisionDefault = 12;
+				}
 			}
 		}
 	}
