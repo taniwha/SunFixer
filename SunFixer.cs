@@ -27,12 +27,7 @@
 		Boston, MA  02111-1307, USA
 
 */
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-
-using KSP.IO;
 
 namespace SunFixer {
 

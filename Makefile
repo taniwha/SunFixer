@@ -5,7 +5,7 @@ GAMEDATA	:= ${KSPDIR}/GameData
 MODGAMEDATA := ${GAMEDATA}/${MODNAME}
 PLUGINDIR	:= ${MODGAMEDATA}/Plugins
 
-TARGETS		:= bin/${MODNAME}.dll
+TARGETS		:= ${MODNAME}.dll
 
 MOD_FILES := \
 	SunFixer.cs		\
@@ -43,8 +43,7 @@ info:
 	@echo "    zip:        ${ZIP}"
 	@echo "    KSP Data:   ${KSPDIR}"
 
-bin/${MODNAME}.dll: ${MOD_FILES}
-	@mkdir -p bin
+${MODNAME}.dll: ${MOD_FILES}
 	${GMCS} ${GMCSFLAGS} -t:library -lib:${MANAGED} \
 		-r:Assembly-CSharp,Assembly-CSharp-firstpass \
 		-r:UnityEngine,UnityEngine.UI \
@@ -55,7 +54,6 @@ clean:
 		make -C $$dir $@ || exit 1; \
 	done
 	rm -f ${TARGETS} Assembly/AssemblyInfo.cs
-	rmdir bin
 
 install: all
 	@for dir in ${SUBDIRS}; do \
