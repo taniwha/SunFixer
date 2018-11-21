@@ -53,7 +53,7 @@ namespace SunFixer {
 			{
 				return;
 			}
-			for (Int32 i = 0; i < suns.Length; i++)
+			for (int i = 0; i < suns.Length; i++)
 			{
 				if (suns[i] != null)
 				{
